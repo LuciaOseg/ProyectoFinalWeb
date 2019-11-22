@@ -4,4 +4,6 @@ const connectionURL = `mongodb+srv://LuciaOseg:Maya2014.@cluster0-azb6v.mongodb.
 mongoose.connect(connectionURL, {
   useNewUrlParser: true,
   useCreateIndex: true,     // crear indexes
+  useUnifiedTopology: true,
+  useFindAndModify: false
 })
