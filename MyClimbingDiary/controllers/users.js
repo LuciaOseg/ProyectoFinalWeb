@@ -21,13 +21,16 @@ const getUser = function(req, res) {
 }
 
 const login = function(req, res) {
-  User.findByCredentials(req.body.email, req.body.password)
-    .then(function(user) {
-      const token = user.generateToken()
-      return res.send({user,token})
-    }).catch( function(error) {
-      return res.status(404).send({ error })
+  console.log(req.body)
+  User.findByCredentials(req.body.email, req.body.password).then(function(user){
+    user.generateToken().then(function(token){
+      return res.send({user, token})
+    }).catch(function(error){
+      return res.status(401).send({ error: error })
     })
+  }).catch(function(error) {
+    return res.status(401).send({ error: error })
+  })
 }
 
 const createUser = function(req, res) {
@@ -40,7 +43,10 @@ const createUser = function(req, res) {
 }
 
 const updateUser = function(req, res) {
-  const _id = req.params.id
+  // solo admitire hacer update de mi usuario que hizo login
+  // quité la ruta de PATCH users/:id y la cambie por PATCH /users
+  // const _id = req.params.id
+  const _id = req.user._id
   const updates = Object.keys(req.body)
   const allowedUpdates = ['name', 'age', 'password', 'email']
   // revisa que los updates enviados sean permitidos, que no envie una key que no permitimos
@@ -53,23 +59,24 @@ const updateUser = function(req, res) {
   }
   User.findByIdAndUpdate(_id, req.body ).then(function(user) {
     if (!user) {
-      return res.status(404).send({})
+      return res.status(404).send()
     }
     return res.send(user)
   }).catch(function(error) {
-    res.status(500).send({ error })
+    res.status(500).send(error)
   })
 }
 
 const deleteUser = function(req, res) {
-  const _id = req.params.id
+  // const _id = req.params.id
+  const _id = req.user._id
   User.findByIdAndDelete(_id).then(function(user){
     if(!user) {
-      return res.status(404).send({})
+      return res.status(404).send()
     }
     return res.send(user)
   }).catch(function(error) {
-    res.status(505).send({ error })
+    res.status(505).send(error)
   })
 }
 

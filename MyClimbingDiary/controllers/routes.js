@@ -13,7 +13,7 @@ router.get('/proyectos', proyectos.getProyecto)
 router.post('/proyectos', proyectos.createProyecto)
 
 router.get('/login', users.login) //Jala
-router.get('/logout', auth, users.logout)
+router.get('/logout', auth, users.logout)//Jala
 router.get('/users', auth, users.getUsers)
 router.get('/users/:id', users.getUser)//Jala
 router.post('/users', users.createUser)//Jala
