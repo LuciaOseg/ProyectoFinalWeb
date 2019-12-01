@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f2f2f2;
+  color: #333333;
+}
+
+div {
+  display: block;
+}
+
+#container-home {
+  width: 800px;
+  background: #ffffff;
+  margin: auto;
+  padding: 40px 50px;
+}
+#logo{
+  margin: 10px 10px 50px 230px;
+  width: 50%;
+  font-size: 30px;
+  align-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+label {
+  font-family: 'Open Sans', sans-serif;
+  margin: 20px 30px;
+}
+#title{
+  margin: 10px 10px ;
+  font-size: 24px;
+  align-content: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#comment{
+  margin: 20px 60px;
+    font-family: 'Open Sans', sans-serif;
+    color: gray;
+}
+
+#fecha{
+   margin: 20px 20px;
+  font-family: 'Public Sans', sans-serif;
+}
+
+#search_form {
+  width: 800px;
+  height: 800px;
+  background: #ffffff;
+  margin: auto;
+  border-radius: 2  px;
+  padding: 40px 50px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+select{
+  font-family: 'Open Sans', sans-serif;
+  width: 150px;
+  height: 25px;
+}
+
+#miniForm {
+  width: 500px;
+  background: #ffffff;
+  margin: auto;
+  border-radius: 2  px;
+  padding: 40px 50px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.input_wrap {
+  padding: 10px 0 0 0;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #adadad;
+}
+
+.input_wrap_sel {
+    border-bottom: 2px solid #333333;
+}
+
+input::placeholder {
+  color: gray;
+  font-size: 26px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input {
+  height: 45px;
+  width: 50%;
+  background: transparent;
+  /*display: block;*/
+  /*padding: 0 5px 0 45px;*/
+  padding: 0 5px; 
+  font-size: 15px;
+  outline: none;
+  border: none;
+  overflow: visible;
+}
+
+#container-button {
+  width: 300px;
+}
+
+button {
+  font-size: 15px;
+  color: #ffffff;
+  justify-content: center;
+  width: 40%;
+  height: 30px;
+  margin: 20px 10px;
+  background: #a64bf4;
+  background: #5DADE2;
+  border: none;
+  border-radius: 25px;
+  float: right;
+font-family: 'Open Sans', sans-serif;
+}
+
+
+#signup_option {
+  font-size: 13px;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+
+#container-logout {
+  float: right;
+}
