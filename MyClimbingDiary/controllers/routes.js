@@ -10,7 +10,7 @@ router.get('/rutas', rutas.getRuta)
 router.post('/rutas', rutas.createRuta)
 
 router.get('/proyectos', proyectos.getProyecto)
-router.post('/proyectos', proyectos.createProyecto)
+router.post('/proyectos', auth, proyectos.createProyecto)
 
 router.get('/login', users.login) //Jala
 router.get('/logout', auth, users.logout)//Jala

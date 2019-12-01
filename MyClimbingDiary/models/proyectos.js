@@ -1,5 +1,6 @@
 
-const Mongoose = require('mongoose');
+const Mongoose = require('mongoose')
+const validator = require('validator')
 
 const proyectoSchema = Mongoose.Schema({
 
@@ -11,7 +12,12 @@ const proyectoSchema = Mongoose.Schema({
       comentario: String,
       fecha: Date
     }],
-    encadene: Date
+    encadene: Date,
+    createdBy: {
+      type: Mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User'
+    }
 });
 
 const Proyecto = Mongoose.model("Proyecto", proyectoSchema);

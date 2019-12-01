@@ -51,8 +51,8 @@ const userSchema = new mongoose.Schema({
 })
 
 // una relacion entre dos Schemas, no lo guarda, es virtual
-userSchema.virtual('todos', {
-  ref: 'Todo',
+userSchema.virtual('proyectos', {
+  ref: 'Proyecto',
   localField: '_id',
   foreignField: 'createdBy'
 })
