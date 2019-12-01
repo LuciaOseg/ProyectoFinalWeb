@@ -12,7 +12,7 @@ $('#signup_button').on('click', function(){
 
   $.ajax({
     //url: 'http://localhost:3000/users',
-    url: 'https://secret-taiga-04561.herokuapp.com/users',
+    url: 'https://myclimbingdiary.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
     },

@@ -11,7 +11,7 @@ $('#login_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send)
   console.log(json_to_send)
   $.ajax({
-    url: 'https://secret-taiga-04561.herokuapp.com/login',
+    url: 'https://myclimbingdiary.herokuapp.com/login',
     // url: 'https://tuapp.herokuapp.com/users/login',
     headers: {
         'Content-Type':'application/json'
