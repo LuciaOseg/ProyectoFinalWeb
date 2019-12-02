@@ -11,6 +11,7 @@ router.post('/rutas', rutas.createRuta)
 
 router.get('/proyectos', proyectos.getProyecto)
 router.post('/proyectos', auth, proyectos.createProyecto)
+router.delete('/proyectos/:id', proyectos.deleteProyecto)
 
 router.post('/login', users.login) //Jala
 router.post('/logout', auth, users.logout)//Jala

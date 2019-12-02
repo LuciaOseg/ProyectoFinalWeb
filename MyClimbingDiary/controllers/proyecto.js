@@ -11,41 +11,46 @@ const getProyectos = function(req, res) {
 const getProyecto = function(req, res) {
   // solo podemos traer el todo si es que es del usuario que hizo login
   const _id = req.params.id
-  Proyecto.findOne({ _id, createdBy: req.user._id }).then(function(todo) {
-    if(!todo){
+  Proyecto.findOne({ _id, createdBy: req.user._id }).then(function(proyecto) {
+    if(!proyecto){
       return res.status(404).send({ error: `Task with id ${_id} not found.`})
     }
-    return res.send(todo)
+    return res.send(proyecto)
   }).catch(function(error) {
     return res.status(500).send({ error: error })
   })
 }
 
-// const createProyecto = function(req, res) {
-//   const proyecto = new Proyecto(req.body)
-//       proyecto.save().then(function() {
-//       return res.send(proyecto)
-//       }).catch(function(error) {
-//       return res.status(400).send(error)
-//       })
-// }
-
 const createProyecto = function(req, res){
   // los ... son para copiar todo el req.body
   // modificar aqui
-  const todo = new Proyecto({
+  const proyecto = new Proyecto({
     ...req.body,
     createdBy: req.user._id
   })
-  todo.save().then(function() {
-    return res.send(todo)
+  proyecto.save().then(function() {
+    return res.send(proyecto)
   }).catch(function(error) {
     return res.status(400).send({ error: error })
   })
 }
 
+const deleteProyecto= function(req, res) {
+  const _id = req.params.id
+  Proyecto.findByIdAndDelete(_id).then(function(proyecto){
+    if(!proyecto) {
+      return res.status(404).send({})
+    }
+    return res.send(proyecto)
+  }).catch(function(error) {
+    res.status(505).send({ error })
+  })
+}
+
+
   module.exports = {
     getProyecto,
     getProyectos,
-    createProyecto
+    createProyecto,
+    deleteProyecto
   }
