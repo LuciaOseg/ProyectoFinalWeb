@@ -12,7 +12,6 @@ const proyectoSchema = Mongoose.Schema({
       comentario: String,
       fecha: Date
     }],
-    encadene: Date,
     createdBy: {
       type: Mongoose.Schema.Types.ObjectId,
       required: true,
