@@ -9,8 +9,9 @@ const router = express.Router()
 router.get('/rutas', rutas.getRuta)
 router.post('/rutas', rutas.createRuta)
 
-router.get('/proyectos', proyectos.getProyecto)
+router.get('/proyectos',  auth, proyectos.getProyectos)
 router.post('/proyectos', auth, proyectos.createProyecto)
+router.patch('/proyectos/:id', auth, proyectos.updateProyecto)
 router.delete('/proyectos/:id', proyectos.deleteProyecto)
 
 router.post('/login', users.login) //Jala
