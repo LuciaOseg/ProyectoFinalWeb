@@ -12,8 +12,8 @@ router.post('/rutas', rutas.createRuta)
 router.get('/proyectos', proyectos.getProyecto)
 router.post('/proyectos', auth, proyectos.createProyecto)
 
-router.get('/login', users.login) //Jala
-router.get('/logout', auth, users.logout)//Jala
+router.post('/login', users.login) //Jala
+router.post('/logout', auth, users.logout)//Jala
 router.get('/users', auth, users.getUsers)
 router.get('/users/:id', users.getUser)//Jala
 router.post('/users', users.createUser)//Jala
