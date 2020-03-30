@@ -15,6 +15,7 @@ router.post('/proyectos', auth, proyectos.createProyecto)
 router.patch('/proyectos/:id', auth, proyectos.updateProyecto)
 router.delete('/proyectos/:id', proyectos.deleteProyecto)
 
+//blabla
 router.get('/misrutas',  auth, misrutas.getMisRutas)
 router.post('/misrutas', auth, misrutas.createMiRuta)
 
