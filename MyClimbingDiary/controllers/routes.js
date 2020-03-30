@@ -17,6 +17,7 @@ router.delete('/proyectos/:id', proyectos.deleteProyecto)
 
 router.get('/misrutas',  auth, misrutas.getMisRutas)
 router.post('/misrutas', auth, misrutas.createMiRuta)
+router.delete('/misrutas/:id', misrutas.deleteMiRuta)
 
 router.post('/login', users.login) //Jala
 router.post('/logout', auth, users.logout)//Jala
