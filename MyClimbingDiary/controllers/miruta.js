@@ -1,8 +1,8 @@
-const misRutas = require('../models/misrutas.js')
+const miRuta = require('../models/misrutas.js')
 
 //Toma mis rutas
 const getMisRutas = function(req, res) {
-misRutas.find({createdBy: req.user._id}).then(function(misrutas) {
+  miRuta.find({createdBy: req.user._id}).then(function(misrutas) {
     res.send(misrutas)
   }).catch(function(error){
     res.status(500).send(error)
