@@ -1,4 +1,4 @@
-const misRutas = require('../models/rutas.js')
+const misRutas = require('../models/misrutas.js')
 
 //Toma mis rutas
 const getMisRutas = function(req, res) {
