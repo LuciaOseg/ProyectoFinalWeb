@@ -1,6 +1,7 @@
 
 const express = require('express')
 const app = express()
+import cors from 'cors';
 
 require('./db/mongoose.js')
 
