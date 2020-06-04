@@ -8,10 +8,9 @@ const routerr = require('./controllers/routes.js')
 
 const port = process.env.PORT || 3000
 
+app.use(cors())
 app.use(express.json())
 app.use(routerr)
-app.use(cors())
-
 
 app.listen(port, function() {
   console.log('Server up and running on port', port)
